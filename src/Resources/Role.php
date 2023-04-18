@@ -12,8 +12,6 @@ use Laravel\Nova\Fields\MorphToMany;
 use Laravel\Nova\Fields\BelongsToMany;
 use Spatie\Permission\PermissionRegistrar;
 use Laravel\Nova\Http\Requests\NovaRequest;
-use DigitalCloud\PermissionTool\PermissionTool;
-use DigitalCloud\PermissionTool\Services\InitializePermissions;
 
 class Role extends Resource
 {
@@ -39,6 +37,13 @@ class Role extends Resource
     public static $search = [
         'name',
     ];
+
+    /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Access Control';
 
     public static $displayInNavigation = true;
 

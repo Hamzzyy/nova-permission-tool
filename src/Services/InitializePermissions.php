@@ -59,11 +59,7 @@ class InitializePermissions
     protected function setupActionPermissions($request, $resourceInstance, $resource)
     {
         foreach ($resourceInstance->actions($request) as $action) {
-            if ($action->name) {
-                $name = $action->name . "-{$resource}";
-            } else {
-                $name = $action::class . "-{$resource}";
-            }
+            $name = $action::class . "-{$resource}";
             $this->rolePermissions[] = $name;
         }
     }
@@ -71,7 +67,7 @@ class InitializePermissions
     protected function setupFieldPermissions($request, $resourceInstance, $resource)
     {
         if (! in_array($resource, ['DigitalCloud\PermissionTool\Resources\Role', 'DigitalCloud\PermissionTool\Resources\Permission'])) {
-            foreach ($resourceInstance->fields($request) as $field) {
+            foreach ($resourceInstance->fieldsList($request) as $field) {
                 if (in_array($field::class, ['Eminiarts\Tabs\Tabs', 'Laravel\Nova\Panel'])) {
                     $field->data = collect($field->data)->each(function ($nestedField) use ($resource) {
                         $this->getVisibleFieldPermission($nestedField, $resource);
@@ -116,13 +112,12 @@ class InitializePermissions
         }
     }
 
-    public function getIdentifiableFieldPermission($field, $resource) 
+    public function getIdentifiableFieldPermission($field, $resource)
     {
         if ($field->attribute && $field->attribute === 'notes') {
             $name = $field->attribute . ' (identifiable)' . "-{$resource}";
             $this->rolePermissions[] = $name;
         }
-
     }
 
     protected function setupToolPermissions()

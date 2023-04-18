@@ -431,7 +431,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var vue__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(vue__WEBPACK_IMPORTED_MODULE_0__);
 
 function render(_ctx, _cache, $props, $setup, $data, $options) {
-  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"ml-5 mb-7 my-2\" v-if=\"group.actions.length > 0\">\n      <div class=\"flex items-center\">\n        <div\n          v-for=\"option in group.actions\"\n          :key=\"option.value\"\n          class=\"flex mb-1 mr-10\"\n        >\n          <div>\n            <checkbox\n              @click=\"handleChange(option.value)\"\n              class=\"py-2 mr-1\"\n              :name=\"field.name\"\n              :checked=\"options[option.value]\"\n            ></checkbox>\n            <label :for=\"field.name\" v-text=\"option.display\"></label>\n          </div>\n        </div>\n      </div>\n    </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <table class=\"table-fixed min-w-full w-40\">\n      <thead class=\"bg-gray-100\">\n        <tr>\n          <th\n            v-for=\"fieldColumn in fieldColumns\"\n            :key=\"fieldColumn\"\n            scope=\"col\"\n            class=\"text-sm font-medium py-4\"\n          >\n            {{ fieldColumn }}\n          </th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr\n          v-for=\"(option, fieldName) in group.fields\"\n          :key=\"fieldName\"\n          class=\"bg-white border-b\"\n        >\n          <td class=\"text-base py-1.5 pl-5\">\n            {{ fieldName }}\n          </td>\n          <td>\n            <div>\n              <checkbox\n                @click=\"handleChange(option.hidden.value)\"\n                class=\"py-2 flex items-center m-auto\"\n                :name=\"field.name\"\n                :checked=\"options[option.hidden.value]\"\n              ></checkbox>\n            </div>\n          </td>\n          <td>\n            <div>\n              <checkbox\n                @click=\"handleChange(option.readonly.value)\"\n                class=\"py-2 flex items-center m-auto\"\n                :name=\"field.name\"\n                :checked=\"options[option.readonly.value]\"\n              ></checkbox>\n            </div>\n          </td>\n        </tr>\n      </tbody>\n    </table> ")]);
+  return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementBlock)("div", null, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <div class=\"ml-5 mb-7 my-2\" v-if=\"group.actions.length > 0\">\r\n      <div class=\"flex items-center\">\r\n        <div\r\n          v-for=\"option in group.actions\"\r\n          :key=\"option.value\"\r\n          class=\"flex mb-1 mr-10\"\r\n        >\r\n          <div>\r\n            <checkbox\r\n              @click=\"handleChange(option.value)\"\r\n              class=\"py-2 mr-1\"\r\n              :name=\"field.name\"\r\n              :checked=\"options[option.value]\"\r\n            ></checkbox>\r\n            <label :for=\"field.name\" v-text=\"option.display\"></label>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <table class=\"table-fixed min-w-full w-40\">\r\n      <thead class=\"bg-gray-100\">\r\n        <tr>\r\n          <th\r\n            v-for=\"fieldColumn in fieldColumns\"\r\n            :key=\"fieldColumn\"\r\n            scope=\"col\"\r\n            class=\"text-sm font-medium py-4\"\r\n          >\r\n            {{ fieldColumn }}\r\n          </th>\r\n        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr\r\n          v-for=\"(option, fieldName) in group.fields\"\r\n          :key=\"fieldName\"\r\n          class=\"bg-white border-b\"\r\n        >\r\n          <td class=\"text-base py-1.5 pl-5\">\r\n            {{ fieldName }}\r\n          </td>\r\n          <td>\r\n            <div>\r\n              <checkbox\r\n                @click=\"handleChange(option.hidden.value)\"\r\n                class=\"py-2 flex items-center m-auto\"\r\n                :name=\"field.name\"\r\n                :checked=\"options[option.hidden.value]\"\r\n              ></checkbox>\r\n            </div>\r\n          </td>\r\n          <td>\r\n            <div>\r\n              <checkbox\r\n                @click=\"handleChange(option.readonly.value)\"\r\n                class=\"py-2 flex items-center m-auto\"\r\n                :name=\"field.name\"\r\n                :checked=\"options[option.readonly.value]\"\r\n              ></checkbox>\r\n            </div>\r\n          </td>\r\n        </tr>\r\n      </tbody>\r\n    </table> ")]);
 }
 
 /***/ }),
@@ -942,7 +942,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n/* Scoped Styles */\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n/* Scoped Styles */\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -966,7 +966,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\nfieldset {\n  border: 1px groove;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\nfieldset {\r\n  border: 1px groove;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1436,13 +1436,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _FieldsTable_vue_vue_type_template_id_c83c7e0c__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FieldsTable.vue?vue&type=template&id=c83c7e0c */ "./resources/js/components/FieldsTable.vue?vue&type=template&id=c83c7e0c");
 /* harmony import */ var _FieldsTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FieldsTable.vue?vue&type=script&lang=js */ "./resources/js/components/FieldsTable.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FieldsTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FieldsTable_vue_vue_type_template_id_c83c7e0c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/FieldsTable.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FieldsTable_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FieldsTable_vue_vue_type_template_id_c83c7e0c__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/FieldsTable.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1465,7 +1465,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _Tool_vue_vue_type_template_id_68ff5483__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Tool.vue?vue&type=template&id=68ff5483 */ "./resources/js/components/Tool.vue?vue&type=template&id=68ff5483");
 /* harmony import */ var _Tool_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./Tool.vue?vue&type=script&lang=js */ "./resources/js/components/Tool.vue?vue&type=script&lang=js");
 /* harmony import */ var _Tool_vue_vue_type_style_index_0_id_68ff5483_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Tool.vue?vue&type=style&index=0&id=68ff5483&lang=css */ "./resources/js/components/Tool.vue?vue&type=style&index=0&id=68ff5483&lang=css");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -1473,7 +1473,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Tool_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Tool_vue_vue_type_template_id_68ff5483__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Tool.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_Tool_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_Tool_vue_vue_type_template_id_68ff5483__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/Tool.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1495,13 +1495,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _DetailField_vue_vue_type_template_id_27f62d24__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DetailField.vue?vue&type=template&id=27f62d24 */ "./resources/js/components/fields/permission/DetailField.vue?vue&type=template&id=27f62d24");
 /* harmony import */ var _DetailField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DetailField.vue?vue&type=script&lang=js */ "./resources/js/components/fields/permission/DetailField.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DetailField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DetailField_vue_vue_type_template_id_27f62d24__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/permission/DetailField.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DetailField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DetailField_vue_vue_type_template_id_27f62d24__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/permission/DetailField.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1524,7 +1524,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _FormField_vue_vue_type_template_id_646bb25e__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormField.vue?vue&type=template&id=646bb25e */ "./resources/js/components/fields/permission/FormField.vue?vue&type=template&id=646bb25e");
 /* harmony import */ var _FormField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormField.vue?vue&type=script&lang=js */ "./resources/js/components/fields/permission/FormField.vue?vue&type=script&lang=js");
 /* harmony import */ var _FormField_vue_vue_type_style_index_0_id_646bb25e_lang_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./FormField.vue?vue&type=style&index=0&id=646bb25e&lang=css */ "./resources/js/components/fields/permission/FormField.vue?vue&type=style&index=0&id=646bb25e&lang=css");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
@@ -1532,7 +1532,7 @@ __webpack_require__.r(__webpack_exports__);
 ;
 
 
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_FormField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FormField_vue_vue_type_template_id_646bb25e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/permission/FormField.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_3__["default"])(_FormField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FormField_vue_vue_type_template_id_646bb25e__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/permission/FormField.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1554,13 +1554,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _IndexField_vue_vue_type_template_id_3e696d9d__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IndexField.vue?vue&type=template&id=3e696d9d */ "./resources/js/components/fields/permission/IndexField.vue?vue&type=template&id=3e696d9d");
 /* harmony import */ var _IndexField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IndexField.vue?vue&type=script&lang=js */ "./resources/js/components/fields/permission/IndexField.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_IndexField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_IndexField_vue_vue_type_template_id_3e696d9d__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/permission/IndexField.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_IndexField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_IndexField_vue_vue_type_template_id_3e696d9d__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/permission/IndexField.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1582,13 +1582,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _DetailField_vue_vue_type_template_id_2d0de80b__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./DetailField.vue?vue&type=template&id=2d0de80b */ "./resources/js/components/fields/role/DetailField.vue?vue&type=template&id=2d0de80b");
 /* harmony import */ var _DetailField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./DetailField.vue?vue&type=script&lang=js */ "./resources/js/components/fields/role/DetailField.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DetailField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DetailField_vue_vue_type_template_id_2d0de80b__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/role/DetailField.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_DetailField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_DetailField_vue_vue_type_template_id_2d0de80b__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/role/DetailField.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1610,13 +1610,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _FormField_vue_vue_type_template_id_27916f78__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./FormField.vue?vue&type=template&id=27916f78 */ "./resources/js/components/fields/role/FormField.vue?vue&type=template&id=27916f78");
 /* harmony import */ var _FormField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./FormField.vue?vue&type=script&lang=js */ "./resources/js/components/fields/role/FormField.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FormField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FormField_vue_vue_type_template_id_27916f78__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/role/FormField.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_FormField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_FormField_vue_vue_type_template_id_27916f78__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/role/FormField.vue"]])
 /* hot reload */
 if (false) {}
 
@@ -1638,13 +1638,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _IndexField_vue_vue_type_template_id_1d8b39d6__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./IndexField.vue?vue&type=template&id=1d8b39d6 */ "./resources/js/components/fields/role/IndexField.vue?vue&type=template&id=1d8b39d6");
 /* harmony import */ var _IndexField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./IndexField.vue?vue&type=script&lang=js */ "./resources/js/components/fields/role/IndexField.vue?vue&type=script&lang=js");
-/* harmony import */ var C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
+/* harmony import */ var C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./node_modules/vue-loader/dist/exportHelper.js */ "./node_modules/vue-loader/dist/exportHelper.js");
 
 
 
 
 ;
-const __exports__ = /*#__PURE__*/(0,C_Users_Administrator_Downloads_nova_permission_tool_master_nova_permission_tool_master_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_IndexField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_IndexField_vue_vue_type_template_id_1d8b39d6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/role/IndexField.vue"]])
+const __exports__ = /*#__PURE__*/(0,C_Bitnami_wampstack_8_1_9_0_apache2_htdocs_nova_permission_tool_node_modules_vue_loader_dist_exportHelper_js__WEBPACK_IMPORTED_MODULE_2__["default"])(_IndexField_vue_vue_type_script_lang_js__WEBPACK_IMPORTED_MODULE_1__["default"], [['render',_IndexField_vue_vue_type_template_id_1d8b39d6__WEBPACK_IMPORTED_MODULE_0__.render],['__file',"resources/js/components/fields/role/IndexField.vue"]])
 /* hot reload */
 if (false) {}
 

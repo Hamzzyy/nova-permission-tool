@@ -72,7 +72,7 @@ trait HasRoles
 
         return $relation->wherePivot(PermissionRegistrar::$teamsKey, getPermissionsTeamId())
             ->where(function ($q) {
-                $teamField = config('permission.table_names.roles').'.'.PermissionRegistrar::$teamsKey;
+                $teamField = config('permission.table_names.roles') . '.' . PermissionRegistrar::$teamsKey;
                 $q->whereNull($teamField)->orWhereIn($teamField, getPermissionsTeamId());
             });
     }
@@ -109,7 +109,7 @@ trait HasRoles
         return $query->whereHas('roles', function (Builder $subQuery) use ($roles) {
             $roleClass = $this->getRoleClass();
             $key = (new $roleClass())->getKeyName();
-            $subQuery->whereIn(config('permission.table_names.roles').".$key", \array_column($roles, $key));
+            $subQuery->whereIn(config('permission.table_names.roles') . ".{$key}", \array_column($roles, $key));
         });
     }
 
@@ -130,6 +130,7 @@ trait HasRoles
                 }
 
                 $role = $this->getStoredRole($role);
+
                 if (! $role instanceof Role) {
                     return $array;
                 }

@@ -1,6 +1,6 @@
 let mix = require("laravel-mix");
 let path = require("path");
-require("./nova.mix");
+require('./nova.mix');
 
 mix
   .setPublicPath("dist")

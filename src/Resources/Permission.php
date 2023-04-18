@@ -38,6 +38,13 @@ class Permission extends Resource
         'name',
     ];
 
+    /**
+     * The logical group associated with the resource.
+     *
+     * @var string
+     */
+    public static $group = 'Access Control';
+
     public static $displayInNavigation = true;
 
     public static function getModel()

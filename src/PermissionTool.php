@@ -4,8 +4,11 @@ namespace DigitalCloud\PermissionTool;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
+use Laravel\Nova\Resource;
 use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Field;
 use Laravel\Nova\Menu\MenuItem;
+use Illuminate\Support\Collection;
 use Laravel\Nova\Menu\MenuSection;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Gate;
@@ -37,13 +40,14 @@ class PermissionTool extends Tool
         $lock = Cache::lock('permissionsInit', 86400);
 
         if ($lock->get()) {
-            (new InitializePermissions())->handle((new NovaRequest()));
+            (new InitializePermissions())->handle((app(NovaRequest::class)));
         }
 
         Nova::script('PermissionTool', __DIR__ . '/../dist/js/tool.js');
         Nova::style('PermissionTool', __DIR__ . '/../dist/css/tool.css');
 
         $this->registerPolicies();
+        $this->registerPermissionMacros();
     }
 
     /**
@@ -91,59 +95,70 @@ class PermissionTool extends Tool
         }
     }
 
-    public static function registerFieldPermissions($resourceInstance, $fieldsList)
+    /**
+     * Register Macros for Field & Resource Fields Permissions
+     */
+    public function registerPermissionMacros()
     {
-        $fieldsWithPermissions = [];
-        $resource = $resourceInstance::class;
-
-        foreach ($fieldsList as $field) {
-            if (in_array($field::class, ['Eminiarts\Tabs\Tabs', 'Laravel\Nova\Panel'])) {
-                $field->data = collect($field->data)->each(function ($nestedField) use ($resource) {
-                    return self::checkFieldPermission($nestedField, $resource);
-                })->toArray();
-                $fieldsWithPermissions[] = $field;
-
-                continue;
-            }
-
-            $fieldsWithPermissions[] = self::checkFieldPermission($field, $resource);
-        }
-
-        return $fieldsWithPermissions;
+        $this->registerFieldPermissionMacro();
+        $this->registerResourceFieldsPermissionMacro();
     }
 
-    public static function checkFieldPermission($field, $resource)
+    public function registerFieldPermissionMacro()
     {
-        if (in_array(Auth::user()->email, config('permission.permissions.admin_emails'))) {
-            return $field;
-        }
+        Field::macro('applyFieldPermission', function ($resource) {
+            if (in_array(Auth::user()?->email, config('permission.permissions.admin_emails'))) {
+                return $this;
+            }
 
-        if (! Auth::user()->roles->count()) {
-            return $field;
-        }
+            if (! Auth::user()?->roles->count()) {
+                return $this;
+            }
 
-        if (in_array($field->attribute, config('permission.permissions.excluded_fields'))) {
-            return $field;
-        }
+            if (in_array($this->attribute, config('permission.permissions.excluded_fields'))) {
+                return $this;
+            }
 
-        if ($field->attribute) {
-            $field->readonly(function () use ($field, $resource) {
-                if ($field->attribute === 'ComputedField') {
-                    return !Gate::check($field->name . ' (writable)' . "-{$resource}");
+            if ($this->attribute) {
+                $this->readonly(function () use ($resource) {
+                    if ($this->attribute === 'ComputedField') {
+                        return ! Gate::check($this->name . ' (writable)' . "-{$resource}");
+                    }
+
+                    return ! Gate::check($this->attribute . ' (writable)' . "-{$resource}");
+                });
+                $this->canSee(function () use ($resource) {
+                    if ($this->attribute === 'ComputedField') {
+                        return Gate::check($this->name . ' (visible)' . "-{$resource}");
+                    }
+
+                    return Gate::check($this->attribute . ' (visible)' . "-{$resource}");
+                });
+            }
+
+            return $this;
+        });
+    }
+
+    public function registerResourceFieldsPermissionMacro()
+    {
+        Resource::macro('applyFieldsPermissions', function (Collection &$fieldsList) {
+            $resource = static::class;
+
+            foreach ($fieldsList as $field) {
+                if (in_array($field::class, ['Eminiarts\Tabs\Tabs', 'Laravel\Nova\Panel'])) {
+                    $field->data = collect($field->data)->each(function ($nestedField) use ($resource) {
+                        return $nestedField->applyFieldPermission($resource);
+                    })->toArray();
+
+                    continue;
                 }
 
-                return !Gate::check($field->attribute . ' (writable)' . "-{$resource}");
-            });
-            $field->canSee(function () use ($field, $resource) {
-                if ($field->attribute === 'ComputedField') {
-                    return Gate::check($field->name . ' (visible)' . "-{$resource}");
-                }
+                $field->applyFieldPermission($resource);
+            }
 
-                return Gate::check($field->attribute . ' (visible)' . "-{$resource}");
-            });
-        }
-
-        return $field;
+            return $fieldsList;
+        });
     }
 
     public static function registerToolPermissions()
@@ -158,6 +173,9 @@ class PermissionTool extends Tool
             ]);
         });
         $tools->each(function ($tool) {
+            if ($tool->seeCallback) {
+                return;
+            }
             $tool->canSee(function () use ($tool) {
                 return Gate::check(static::getToolPermission($tool));
             });
@@ -192,6 +210,7 @@ class PermissionTool extends Tool
         if ($dashboard->name) {
             return sprintf('%s-Laravel\Nova\Dashboard', $dashboard->name);
         }
+
         return sprintf('%s-Laravel\Nova\Dashboard', $dashboard::class);
     }
 

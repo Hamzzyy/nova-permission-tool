@@ -4,7 +4,6 @@ namespace DigitalCloud\PermissionTool;
 
 use Gate;
 use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use DigitalCloud\PermissionTool\Http\Middleware\Authorize;
@@ -33,7 +32,7 @@ class ToolServiceProvider extends ServiceProvider
         ]);
 
         $this->publishes([
-            __DIR__. '/../database/migrations' => database_path('migrations')
+            __DIR__ . '/../database/migrations' => database_path('migrations'),
         ], 'permission-tool-migrations');
 
         // Super admin all permissions
@@ -41,9 +40,6 @@ class ToolServiceProvider extends ServiceProvider
             if (in_array($user->email, config('permission.permissions.admin_emails'))) {
                 return true;
             }
-        });
-
-        Nova::serving(function (ServingNova $event) {
         });
     }
 
